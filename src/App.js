@@ -11,12 +11,12 @@ function App() {
   }, [])
 
   const onClose = () => {
-    tg.Close()
+    tg.сlose()
   }
 
   return (
     <div className="App">
-      <h1></h1>
+  <h1></h1> 
       <button onClick={onClose}>Закрити</button>
     </div>
   );
