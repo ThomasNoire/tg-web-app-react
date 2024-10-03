@@ -16,10 +16,13 @@ function App() {
 
   return (
     <div className="App">
-        <h1 className="header-title"></h1>
       <button onClick={onClose}>Закрити</button>
-      
+          <span className={'username'}>
+            {tg.initDataUnsafe?.user?.username}
+          </span>
+          <h1 className="title"></h1>
     </div>
+
   );
 }
 

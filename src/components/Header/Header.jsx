@@ -1,11 +1,14 @@
 import React from 'react';
+import Button from '../Button/Button';
 
 const Header = () => {
+
+
     return (
         <div className={'header'}>
-          <button>close</button>
+          <Button onClick={onClose}>close button</Button>
           <span className={'username'}>
-            {tg.initDataUnsafe}
+            {tg.initDataUnsafe?.user?.username}
           </span>
         </div>
     );
