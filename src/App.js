@@ -2,9 +2,10 @@ import { useEffect } from 'react';
 import { useTelegram } from './components/hooks/useTelegram';
 import './App.css';
 import Header from './components/Header/Header'
-
-
-const tg = window.Telegram.WebApp;
+import {Route, Routes} from 'react-router-dom'
+import ProductList from './components/ProductList/ProductList'
+import Form from '../src/components/Form/Form'
+// const tg = window.Telegram.WebApp;
 
 function App() {
 
@@ -15,18 +16,21 @@ function App() {
     tg.ready();
   }, [])
 
-  const onClose = () => {
-    tg.close()
-  }
+  // const onClose = () => {
+  //   tg.close()
+  // }
 
   return (
     <div className="App">
       <Header/>
-      <button onClick={onClose}>Закрити</button>
+      {/* <button onClick={onClose}>Закрити</button>
           <span className={'username'}>
             {tg.initDataUnsafe?.user?.username}
-          </span>
-          <h1 className="title"></h1>
+          </span> */}
+          <Routes>
+        <Route index element={ <ProductList />}/>
+        <Route path={'form'} element={ <Form />}/>
+          </Routes>
     </div>
 
   );
